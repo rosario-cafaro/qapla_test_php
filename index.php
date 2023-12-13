@@ -100,7 +100,7 @@ curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($data));
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
 
-$curl_response = json_decode(curl_exec($ch), true);
+$curl_response = json_decode(curl_exec($ch), true) ?? [];
 
 /**
  * Ignore eventual errors, use the fallback static array
