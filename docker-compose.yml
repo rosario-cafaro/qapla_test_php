@@ -1,0 +1,14 @@
+version: "3.9"
+
+services:
+
+  apache2:
+    privileged: true
+    build:
+      context: .
+      dockerfile: container-build/apache2/Dockerfile
+    ports:
+      - "8080:80"
+    volumes:
+#      - /var/run/docker.sock:/var/run/docker.sock
+      - .:/var/www/html/
